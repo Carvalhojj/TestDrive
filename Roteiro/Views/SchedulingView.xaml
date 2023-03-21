@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="{Binding Veiculo.Name}"
+             x:Class="TestDrive.Views.SchedulingView">
+    <ContentPage.Content>
+        <StackLayout>
+            <TableView>
+                <TableRoot>
+                    <TableSection Title="Seus Dados">
+                        <EntryCell Label="Nome: " Keyboard="Text" Text="{Binding Name}"></EntryCell>
+                        <EntryCell Label="Telefone: " Keyboard="Telephone" Text="{Binding Fone}"></EntryCell>
+                        <EntryCell Label="Email: " Keyboard="Email" Text="{Binding Email}"></EntryCell>
+                    </TableSection>
+                    <TableSection Title="Agendamento">
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Data: " Padding="10" FontAttributes="Bold" FontSize="18"/>
+                                <DatePicker Date="{Binding SchedulingTime}"/>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Hora: " Padding="10" FontAttributes="Bold" FontSize="18"/>
+                                <TimePicker Time="{Binding SchedulingHour}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+            <Button Text="Agendar" Clicked="Button_Clicked"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
